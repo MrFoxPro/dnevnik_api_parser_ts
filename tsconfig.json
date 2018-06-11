@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "skipLibCheck": true,
+    "watch": true,
+    "moduleResolution": "node",
+    "outDir": "build",
+    "sourceMap": true
+  },
+  "exclude": ["node_modules"]
+}

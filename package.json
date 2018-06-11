@@ -1,0 +1,24 @@
+{
+  "name": "dnevnik-api-parser-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r ts-node/register --inspect index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.7",
+    "@types/node": "^10.3.2",
+    "@types/node-fetch": "^2.1.1",
+    "ts-node": "^6.1.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.1.2",
+    "ts-code-generator": "0.0.3",
+    "typescript": "^2.9.1"
+  }
+}
