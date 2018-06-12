@@ -13,8 +13,11 @@ export interface IResource {
     name: string;
     requests: IRequest[];
 }
-export interface IParameter extends IType {
+export interface IParameter {
+    name: string;
     source: "uri" | "body";
+    docId: string;
+    type: string;
 }
 export interface IRequest {
     method: "GET" | "POST" | "PUT" | "DELETE";
