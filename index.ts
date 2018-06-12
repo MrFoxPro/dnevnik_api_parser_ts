@@ -11,7 +11,7 @@ async function parseDnevnikApi(): Promise<void> {
     )).json();
     const types: IType[] = await (await fetch("https://api.dnevnik.ru/v1/metadata/types")).json();
     const docs: IDoc[] = await (await fetch("https://api.dnevnik.ru/v1/metadata/docs")).json();
-    let file = generator.createFile({});
+    let file = generator.createFile();
     file.classes = file.classes.concat(createClasses(resources, docs));
     file.addFunction({
         name: "request",
