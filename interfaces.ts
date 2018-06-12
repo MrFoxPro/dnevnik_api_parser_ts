@@ -36,16 +36,16 @@ export interface IDoc {
     text: string;
     localization: string;
 }
-export interface IResouce {
-    parameters: IType[];
-    returnType: IType;
-    accessRights:
-        | "CommonInfo"
-        | "ContactInfo"
-        | "FriendsAndRelatives"
-        | "EducationalInfo"
-        | "SocialInfo"
-        | "Files"
-        | "Wall"
-        | "Messages";
-}
+// export interface IResouce {
+//     parameters: IType[];
+//     returnType: IType;
+//     accessRights:
+//         | "CommonInfo"
+//         | "ContactInfo"
+//         | "FriendsAndRelatives"
+//         | "EducationalInfo"
+//         | "SocialInfo"
+//         | "Files"
+//         | "Wall"
+//         | "Messages";
+// }
