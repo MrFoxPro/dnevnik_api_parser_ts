@@ -27,8 +27,10 @@ async function parseDnevnikApi(): Promise<void> {
         ]
     });
     file.interfaces = file.interfaces.concat(createInterfaces(types, docs));
-    file.getClass;
-    fs.writeFileSync("output.ts", file.write({ indentNumberOfSpaces: 4, useTabs: false }));
+    let output = file
+        .write({ indentNumberOfSpaces: 4, useTabs: false })
+        .replace(/\async/gi, "static async"); //workaround for static
+    fs.writeFileSync("output.ts", output);
 }
 function findDocText(docs: IDoc[], docId: string) {
     const doc = docs.find(doc => doc.id === docId);
@@ -92,9 +94,10 @@ function createMethods(requests: IRequest[], docs: IDoc[]) {
             name: request.name,
             isAsync: true,
             documentationComment: findDocText(docs, request.docId),
+            scope: "public",
+            overloadSignatures: [{}], // TODO
             onWriteFunctionBody: writer => {
                 const uri = request.uri.replace(/\{/gi, "${");
-
                 if (request.method == "GET") {
                     let block = `return request(\`${uri}\`, {method: "${request.method}"`;
                     writer.write(block + `})`);
